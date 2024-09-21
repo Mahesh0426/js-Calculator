@@ -4,43 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .calculator {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+      input[type="number"],
+      select {
+        width: 70px;
+        padding: 8px;
+        margin: 0 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      select {
+        width: 50px;
+      }
+      #result {
+        background-color: #e9e9e9;
+      }
+      span {
+        font-size: 20px;
+        margin: 0 10px;
+      }
+      button {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 20px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
   </head>
   <body>
-    <h1>Simple Calculator By Mahesh</h1>
-    <input type="number" id="num1" value="" />
-    <select id="operator">
-      <option value="+">+</option>
-      <option value="-">-</option>
-      <option value="*">*</option>
-      <option value="/">/</option>
-    </select>
-    <input type="number" id="num2" value="" />
-    <span>=</span>
-    <input type="number" id="result" value="" readonly />
-    <br /><br />
-    <button onclick="calculate()">Calculate</button>
+    <div class="calculator">
+      <h1>Simple Calculator</h1>
+      <input type="number" id="num1" value="" />
+      <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">×</option>
+        <option value="/">÷</option>
+      </select>
+      <input type="number" id="num2" value="" />
+      <span>=</span>
+      <input type="number" id="result" value="" readonly />
+      <br />
+      <button onclick="calculate()">Calculate</button>
+    </div>
 
-    <script>
-      function calculate() {
-        let num1 = parseFloat(document.getElementById("num1").value);
-        let num2 = parseFloat(document.getElementById("num2").value);
-        let operator = document.getElementById("operator").value;
-        let result;
-
-        if (operator === "+") {
-          result = num1 + num2;
-        } else if (operator === "-") {
-          result = num1 - num2;
-        } else if (operator === "*") {
-          result = num1 * num2;
-        } else if (operator === "/") {
-          result = num1 / num2;
-        } else {
-          result = "Invalid operator";
-        }
-
-        document.getElementById("result").value = result;
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
